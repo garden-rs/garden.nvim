@@ -1,0 +1,53 @@
+*garden.nvim.txt*                    Syntax highlighting for Garden YAML files
+                              For NVIM v0.12.0    Last change: 2026 October 01
+
+==============================================================================
+1. garden.nvim                                       *garden.nvim-garden.nvim*
+
+_garden.nvim_ configures treesitter syntax highlighting for Garden
+<https://garden-rs.gitlab.io/> YAML files.
+
+
+INSTALLATION                            *garden.nvim-garden.nvim-installation*
+
+You can install this plugin using your favorite vim package manager.
+
+
+PACKER ~
+
+>lua
+    use({'garden-rs/garden.nvim'})
+<
+
+
+LAZY ~
+
+>lua
+    { 'garden-rs/garden.nvim' }
+<
+
+
+DEVELOPMENT                              *garden.nvim-garden.nvim-development*
+
+The Garden file <garden.yaml> can be used to run lint checks using Garden
+<https://gitlab.com/garden-rs/garden>.
+
+>bash
+    # Run lint checks using "luacheck"
+    garden check -vv
+<
+
+The documentation is generated using panvimdoc
+<https://github.com/kdheepak/panvimdoc.git>.
+
+>bash
+    garden setup -vv  # one-time setup
+    garden doc -vv
+<
+
+Use `garden fmt -vv` to apply code formatting using stylua
+<https://github.com/JohnnyMorganz/StyLua>.
+
+
+
+vim:tw=78:ts=8:noet:ft=help:norl:
