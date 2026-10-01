@@ -11,13 +11,13 @@ You can install this plugin using your favorite vim package manager.
 ### Packer
 
 ```lua
-use({'davvid/garden.nvim'})
+use({'garden-rs/garden.nvim'})
 ```
 
 ### Lazy
 
 ```lua
-{ 'davvid/garden.nvim' }
+{ 'garden-rs/garden.nvim' }
 ```
 
 
