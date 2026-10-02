@@ -35,22 +35,27 @@ garden.setup = function()
     local treesitter_query = [[
         ; Block maps
         ((block_mapping_pair
+            key: (flow_node (plain_scalar) @key)
             value: (block_node (block_scalar) @injection.content))
             (#is-filetype? "yaml.garden")
+            (#not-eq? @key "description")
             (#set! injection.language "bash"))
 
         ; Flow maps
         ((block_mapping_pair
+            key: (flow_node (plain_scalar) @key)
             value: (flow_node [
                 (plain_scalar (string_scalar) @injection.content)
                 (double_quote_scalar) @injection.content
                 (single_quote_scalar) @injection.content
             ]))
             (#is-filetype? "yaml.garden")
+            (#not-eq? @key "description")
             (#set! injection.language "bash"))
 
         ; Block Arrays inside a map
         ((block_mapping_pair
+            key: (flow_node (plain_scalar) @key)
             value: (block_node
                 (block_sequence
                 (block_sequence_item [
@@ -62,10 +67,12 @@ garden.setup = function()
                     ])
                 ]))))
             (#is-filetype? "yaml.garden")
+            (#not-eq? @key "description")
             (#set! injection.language "bash"))
 
         ; Flow Arrays inside a map
         ((block_mapping_pair
+            key: (flow_node (plain_scalar) @key)
             value: (flow_node
                 (flow_sequence [
                     (plain_scalar (string_scalar) @injection.content)
@@ -73,6 +80,7 @@ garden.setup = function()
                     (single_quote_scalar) @injection.content
                 ])))
             (#is-filetype? "yaml.garden")
+            (#not-eq? @key "description")
             (#set! injection.language "bash"))
     ]]
 
