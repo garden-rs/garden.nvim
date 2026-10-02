@@ -1,5 +1,5 @@
 *garden.txt*                              Syntax highlighting for garden files
-                               For NVIM v0.8.0    Last change: 2026 October 01
+                               For NVIM v0.8.0    Last change: 2026 October 02
 
 ==============================================================================
 1. garden.nvim                                            *garden-garden.nvim*
